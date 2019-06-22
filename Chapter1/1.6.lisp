@@ -23,8 +23,10 @@
           guess
           (sqrt-iter (improve guess x) x)))
 
-; What happens when she attempts to use this to compute square roots?
-(sqrt-iter 1 4)
+(defun custom-sqrt (x)
+  (sqrt 1.0 x))
 
+; What happens when she attempts to use this to compute square roots?
+;(custom-sqrt 4)
 ; Answer:
 ; What will happen is that we will be stuck in an infinite loop. The 'if' operator's expression is a special form in lisp where both the alternatives are not evaluated. Only the alternative that is needed based on the predicate gets evaluated. Here, in Alyssa's new-if all the operands will get evaluated so the recursion will never end.
